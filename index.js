@@ -20,7 +20,7 @@ console.log(issueKind);
 if(!issueKind) {
     failure('Pull request kind/ label is absent, and needs to be added.');
 }
-
+console.log(issueKind);
 if(issueKind === 'kind/bug') {
     const bugType = labels.find(label => label.name.startsWith('bug-type/'));
     if(!bugType) {

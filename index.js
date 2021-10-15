@@ -9,7 +9,7 @@ if (!github.context.payload.pull_request) {
 
 const authToken = core.getInput('auth-token');
 
-const octokit = new github.GitHub(authToken);
+const octokit = new github.getOctokit(authToken);
 
 const { owner, repo } = github.context.repo;
 octokit.rest.pulls.createReview({

@@ -19,6 +19,6 @@ octokit.rest.pulls.createReview({
     event: 'REQUEST_CHANGES',
     body: 'Label missing'
 })
-console.log(github.context.payload.pull_request.labels)
+console.log(github.context.payload.pull_request)
 
 core.setFailed('Label missing');

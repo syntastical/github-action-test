@@ -13,7 +13,7 @@ const authToken = core.getInput('auth-token');
 
 const octokit = new github.getOctokit(authToken);
 
-const { number, labels } = github.context.payload;
+const { number, labels } = github.context.payload.pull_request;
 
 const issueKind = labels.filter(label => label.name.startsWith('kind/'));
 if(!issueKind) {

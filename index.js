@@ -1,7 +1,7 @@
 const core = require('@actions/core');
 const github = require('@actions/github');
 
-if (!context.payload.pull_request) {
+if (!github.context.payload.pull_request) {
     throw new Error(
         "Payload doesn't contain `pull_request`. Make sure this Action is being triggered by a pull_request event (https://help.github.com/en/articles/events-that-trigger-workflows#pull-request-event-pull_request)."
     )
@@ -10,7 +10,6 @@ if (!context.payload.pull_request) {
 const authToken = core.getInput('auth-token');
 
 const octokit = new github.GitHub(authToken);
-
 
 const { owner, repo } = github.context.repo;
 octokit.rest.pulls.createReview({

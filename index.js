@@ -16,6 +16,7 @@ const octokit = new github.getOctokit(authToken);
 const { number, labels } = github.context.payload.pull_request;
 
 const issueKind = labels.filter(label => label.name.startsWith('kind/'));
+console.log(issueKind);
 if(!issueKind) {
     failure('Pull request kind/ label is absent, and needs to be added.');
 }

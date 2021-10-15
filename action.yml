@@ -1,0 +1,13 @@
+name: 'Label enforcer'
+description: 'Enforces labeling standards'
+inputs:
+  auth-token:
+    description: 'Auth token'
+    required: true
+
+#outputs:
+#  time: # id of output
+#    description: 'The time we greeted you'
+runs:
+  using: 'node12'
+  main: 'index.js'

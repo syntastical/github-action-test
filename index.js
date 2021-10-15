@@ -50,7 +50,7 @@ function failure(message) {
         repo,
         pull_number: github.context.payload.pull_request.number,
         event: 'REQUEST_CHANGES',
-        body: 'Label missing'
+        body: message
     });
-    core.setFailed('Label missing');
+    core.setFailed(message);
 }

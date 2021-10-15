@@ -1,5 +1,6 @@
 const core = require('@actions/core');
 const github = require('@actions/github');
+const process = require('process');
 
 console.log(github.context.payload.pull_request)
 
@@ -51,4 +52,5 @@ function failure(message) {
         body: message
     });
     core.setFailed(message);
+    process.exit(1);
 }

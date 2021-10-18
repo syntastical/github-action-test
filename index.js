@@ -1,3 +1,4 @@
+// TODO Tag Dalia and Amber on PR
 const core = require('@actions/core');
 const github = require('@actions/github');
 const process = require('process');
@@ -27,23 +28,8 @@ if(issueKind.name === 'kind/bug') {
     }
 }
 
-
-    // labels: [
-    //     {
-    //         color: 'd73a4a',
-    //         default: true,
-    //         description: "Something isn't working",
-    //         id: 3454323411,
-    //         name: 'bug',
-    //         node_id: 'LA_kwDOGOOWis7N5MrT',
-    //         url: 'https://api.github.com/repos/syntastical/github-action-test/labels/bug'
-    //     }
-    // ],
-
-
 function failure(message) {
     const { owner, repo } = github.context.repo;
-    // octokit.rest.pulls.dismissReview
     octokit.rest.pulls.createReview({
         owner,
         repo,

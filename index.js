@@ -1,4 +1,3 @@
-// TODO Tag Dalia and Amber on PR
 const core = require('@actions/core');
 const github = require('@actions/github');
 const process = require('process');

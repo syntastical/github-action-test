@@ -8,6 +8,10 @@ on:
       - labeled
       - unlabeled
 
+concurrency:
+  group: label-checker-${{ github.head_ref }}
+  cancel-in-progress: true
+
 jobs:
   label-test:
     runs-on: ubuntu-latest

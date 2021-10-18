@@ -27,9 +27,9 @@ if(issueKind.name === 'kind/bug') {
     }
 }
 
-function failure(message) {
+async function failure(message) {
     const { owner, repo } = github.context.repo;
-    octokit.rest.pulls.createReview({
+    await octokit.rest.pulls.createReview({
         owner,
         repo,
         pull_number: github.context.payload.pull_request.number,

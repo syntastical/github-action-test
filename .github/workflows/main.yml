@@ -7,6 +7,8 @@ on:
       - reopened
       - labeled
       - unlabeled
+  workflow_dispatch:
+
 
 concurrency:
   group: label-checker-${{ github.head_ref }}

@@ -7,7 +7,9 @@ on:
       - reopened
       - labeled
       - unlabeled
-  workflow_dispatch:
+  push:
+    tags:
+    
 
 
 concurrency:
@@ -20,9 +22,5 @@ jobs:
     name: Check labels
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
-      - name: Check labels
-        uses: ./ # Uses an action in the root directory
-        id: check
-        with:
-          auth-token: ${{ secrets.GITHUB_TOKEN }}
+        runs: |-
+          env
